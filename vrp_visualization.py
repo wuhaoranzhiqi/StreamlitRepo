@@ -1,9 +1,9 @@
 import streamlit as st
 import pydeck as pdk
 
-from streamlit_echarts import st_pyecharts
-from pyecharts import options as opts
-from pyecharts.charts import Line, Scatter, Timeline
+# from streamlit_echarts import st_pyecharts
+# from pyecharts import options as opts
+# from pyecharts.charts import Line, Scatter, Timeline
 import vrptw
 
 import pandas as pd
@@ -76,33 +76,33 @@ def show_routes():
 
 
 # 生成随机的车辆行驶路径
-def showPath():
-    # 生成随机的车辆行驶路径
-    x = np.random.randint(0, 100, 10)
-    y = np.random.randint(0, 100, 10)
+# def showPath():
+#     # 生成随机的车辆行驶路径
+#     x = np.random.randint(0, 100, 10)
+#     y = np.random.randint(0, 100, 10)
 
-    # 创建时间轴
-    timeline = Timeline()
-    # 创建折线图和散点图
-    for i in range(len(x)):
-        scatter = (
-            Scatter()
-            .add_xaxis(x[:i+1].tolist())
-            .add_yaxis('', y[:i+1].tolist())
-            .set_series_opts(opts.LabelOpts(is_show=False))
-        )
-        line = (
-            Line()
-            .add_xaxis(x[:i+1].tolist())
-            .add_yaxis('', y[:i+1].tolist(), is_symbol_show= False)
-            .set_global_opts(
-                xaxis_opts=opts.AxisOpts(min_=0, max_=100, is_show=False),
-                yaxis_opts=opts.AxisOpts(min_=0, max_=100, is_show=False),
-            ).set_series_opts(opts.LabelOpts(is_show=False))
-        )    
-        # 添加到时间轴
-        timeline.add(line.overlap(scatter), str(i))
-    return timeline
+#     # 创建时间轴
+#     timeline = Timeline()
+#     # 创建折线图和散点图
+#     for i in range(len(x)):
+#         scatter = (
+#             Scatter()
+#             .add_xaxis(x[:i+1].tolist())
+#             .add_yaxis('', y[:i+1].tolist())
+#             .set_series_opts(opts.LabelOpts(is_show=False))
+#         )
+#         line = (
+#             Line()
+#             .add_xaxis(x[:i+1].tolist())
+#             .add_yaxis('', y[:i+1].tolist(), is_symbol_show= False)
+#             .set_global_opts(
+#                 xaxis_opts=opts.AxisOpts(min_=0, max_=100, is_show=False),
+#                 yaxis_opts=opts.AxisOpts(min_=0, max_=100, is_show=False),
+#             ).set_series_opts(opts.LabelOpts(is_show=False))
+#         )    
+#         # 添加到时间轴
+#         timeline.add(line.overlap(scatter), str(i))
+#     return timeline
 
 if action == "Add Vehicles 🐧️":
     st.subheader("❄️ Add Vehicles! ❄️")
