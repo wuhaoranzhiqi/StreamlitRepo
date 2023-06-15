@@ -1,0 +1,4 @@
+depot_id,x_coord,y_coord,vehicle_type,vehicle_capacity,vehicle_speed,number_of_vehicle,fixed_cost,variable_cost,start_time,end_time
+d1,121.396759,31.213901,v1,18,1,5,0,2,0,200
+d1,121.396759,31.213901,v2,32,1,8,0,4,0,200
+d1,121.396759,31.213901,v3,26,1,2,0,3,0,200
